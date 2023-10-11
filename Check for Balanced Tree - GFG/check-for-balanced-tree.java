@@ -137,14 +137,18 @@ class Tree
         }
         
         int lh=helper(root.left);
+        if(lh==-1)
+        return -1;
         int rh=helper(root.right);
+        if(rh==-1)
+        return -1;
+        
+        
         
         if(Math.abs(lh-rh)>1){
             return -1;
         }
-        if(lh==-1||rh==-1){
-            return -1;
-        }
+
         return Math.max(lh,rh)+1;
         
         
